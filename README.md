@@ -8,4 +8,4 @@ You can find the details about the original game at : [Wikipedia Frogger](https:
 *  On reaching the water 5 is added to score and position of player is reset  
 
 ##To play the game:  
-Navigate on the canvas using **up, down and side keys**.Avoid the bugs and collect the gems for good score.Reach the water to resestthe game
+Navigate on the canvas using **up, down and side keys**.Avoid the bugs and collect the gems for good score.Reach the water to resest the game

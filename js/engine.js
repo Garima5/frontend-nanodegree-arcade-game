@@ -45,6 +45,7 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
+         // console.log('All enemies render');
         update(dt);
         render();
 
@@ -95,6 +96,8 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+        gem_blue.update(dt);
+        gem_green.update(dt);
     }
 
     /* This function initially draws the "game level", it will then call
@@ -148,10 +151,12 @@ var Engine = (function(global) {
          * the render function you have defined.
          */
         allEnemies.forEach(function(enemy) {
-            enemy.render();
+          enemy.render();
         });
 
         player.render();
+        gem_blue.render();
+        gem_green.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -171,9 +176,12 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-horn-girl.png',
+        'images/Gem Blue.png',
+        'images/Gem Green.png'
+
     ]);
-    Resources.onReady(init);
+    Resources.onReady(init);  //Just putting the function on a stack..does not call onReady().It is actuually being called in resources.js
 
     /* Assign the canvas' context object to the global variable (the window
      * object when run in a browser) so that developers can use it more easily

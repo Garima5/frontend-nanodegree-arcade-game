@@ -9,3 +9,6 @@ You can find the details about the original game at : [Wikipedia Frogger](https:
 
 ##To play the game:  
 Navigate on the canvas using **up, down and side keys**.Avoid the bugs and collect the gems for good score.Reach the water to resest the game
+
+## Play the game 
+[here](https://garima5.github.io/frontend-nanodegree-arcade-game/index.html)

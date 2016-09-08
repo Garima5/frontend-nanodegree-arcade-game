@@ -6,4 +6,6 @@ You can find the details about the original game at : [Wikipedia Frogger](https:
 *  The blue gem-If caught adds 5 points to the score  
 *  The green gem-If caught adds 3 points to score  
 *  On reaching the water 5 is added to score and position of player is reset  
-##To play the game:  Navigate on the canvas using **up, down and side keys**.Avoid the bugs and collect the gems for good score.Reach the water to resestthe game
+
+##To play the game:  
+Navigate on the canvas using **up, down and side keys**.Avoid the bugs and collect the gems for good score.Reach the water to resestthe game

@@ -5,7 +5,8 @@
 */
 var score=0; //Global variable to calculate score
 var choose_speed=[200,100,50,290]; //options for speeds
-
+var level=1;
+var lives=5;
 /**
 * @description : Describes the Enemy class that is the bugs that have to be missed
 * @constructor : Enemy
@@ -36,6 +37,15 @@ Enemy.prototype.update = function(dt) {
         //Detects collision
 
         score = score-1; //If collision is detected, reduce score by 1 and reset the position of the player    
+        lives=lives-1;
+        if(lives<=0)
+        {
+            player.reset();
+            score=0;
+            level=1;
+
+            lives=5;
+        }
         player.reset();
     }
 };
@@ -56,7 +66,8 @@ var Player=function()
 {        
     this.x= 200, //Initial x co ordinate
     this.y= 400, //Initial y co ordinate
-    this.sprite ='images/char-horn-girl.png'     
+    this.sprite ='images/char-horn-girl.png',
+    this.life='images/Heart.png'    
 };
 /** Draw the player and display the score */
 Player.prototype.render = function() {
@@ -67,7 +78,12 @@ Player.prototype.render = function() {
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
     ctx.fillText("Score: " + score, 50, 70); //Write the score on canvas
-    
+    ctx.fillText("Level " + level, 170, 70);
+    for(g=0;g<lives;g++)
+    {
+        ctx.drawImage(Resources.get(this.life), 270+(g*30),60,30,40);
+    }
+    //document.write("Number of lives: "+ lives);
 };
 /**
 * desription- If the player reaches the water add 5 to score and reset its position
@@ -78,6 +94,8 @@ Player.prototype.update=function()
     {
         score=score+5;
         this.reset();
+        level=level+1;
+
     }
 
 };
@@ -165,7 +183,7 @@ BlueGem.prototype.reset=function()
     this.y=30;
 
 };
-
+////////////////////
 /**
 * @description : Describes the Green Gem class that is class for green coloured gem
 * @constructor : GreenGem
@@ -238,6 +256,7 @@ var rand_speed3=choose_speed[Math.floor(Math.random() * choose_speed.length)];
 var rand_speed4=choose_speed[Math.floor(Math.random() * choose_speed.length)];
 var rand_speed5=choose_speed[Math.floor(Math.random() * choose_speed.length)];
 var rand_speed6=choose_speed[Math.floor(Math.random() * choose_speed.length)];
+//Math.random() function returns a value between 0 to 0.99.We multiply it with required factor.
 //instantiate the objects.
 
 var enemy1=new Enemy(rand_speed1,-400,70);

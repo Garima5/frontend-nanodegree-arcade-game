@@ -178,7 +178,8 @@ var Engine = (function(global) {
         'images/enemy-bug.png',
         'images/char-horn-girl.png',
         'images/Gem Blue.png',
-        'images/Gem Green.png'
+        'images/Gem Green.png',
+        'images/Heart.png'
 
     ]);
     Resources.onReady(init);  //Just putting the function on a stack..does not call onReady().It is actuually being called in resources.js

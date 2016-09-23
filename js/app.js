@@ -5,6 +5,7 @@
 */
 var score=0; //Global variable to calculate score
 var choose_speed=[200,100,50,290]; //options for speeds
+var update_speed=[70,250,300,450,600,105,205,140];
 var level=1;
 var lives=5;
 /**
@@ -45,6 +46,7 @@ Enemy.prototype.update = function(dt) {
             level=1;
 
             lives=5;
+
         }
         player.reset();
     }
@@ -95,6 +97,19 @@ Player.prototype.update=function()
         score=score+5;
         this.reset();
         level=level+1;
+        if(level%2==0)
+        {
+            allEnemies.forEach(function(enemy) {
+            enemy.speed=update_speed[Math.floor(Math.random() * update_speed.length)];//update the speed of enemy
+        });
+        }
+        else
+            {
+            allEnemies.forEach(function(enemy) {
+            enemy.speed=choose_speed[Math.floor(Math.random() * choose_speed.length)];//update the speed of enemy
+        });
+        }
+        
 
     }
 

@@ -1,3 +1,10 @@
 body {
     text-align: center;
+    background-color: #89cff0;
+}
+p
+{
+	font: italic bold 19px/30px Georgia, serif ;
+	color: #4C1F36;
+	 text-shadow: 1px 1px pink;
 }
